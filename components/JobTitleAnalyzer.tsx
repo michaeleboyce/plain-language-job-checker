@@ -44,7 +44,7 @@ export default function JobTitleAnalyzer() {
             value={jobTitle}
             onChange={(e) => setJobTitle(e.target.value)}
             placeholder="e.g., GS-2210-14 Information Technology Specialist (INFOSEC)"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors text-gray-900 placeholder-gray-400 bg-white"
             disabled={loading}
           />
         </div>
@@ -64,9 +64,9 @@ export default function JobTitleAnalyzer() {
       )}
 
       {result && (
-        <div className="bg-white rounded-lg shadow-lg p-6 space-y-6">
+        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 space-y-4 sm:space-y-6">
           <div className="flex items-center space-x-3">
-            <div className={`w-6 h-6 rounded-full ${result.isPlainLanguage ? 'bg-green-500' : 'bg-amber-500'}`}>
+            <div className={`w-6 h-6 rounded-full flex-shrink-0 ${result.isPlainLanguage ? 'bg-green-500' : 'bg-amber-500'}`}>
               <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {result.isPlainLanguage ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -75,7 +75,7 @@ export default function JobTitleAnalyzer() {
                 )}
               </svg>
             </div>
-            <h2 className="text-xl font-semibold">
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900">
               {result.isPlainLanguage ? 'This is a Plain Language Job Title' : 'This Job Title Needs Improvement'}
             </h2>
           </div>
