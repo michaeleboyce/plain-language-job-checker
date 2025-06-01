@@ -51,7 +51,7 @@ const getCachedAnalysis = unstable_cache(
   async (jobTitle: string) => analyzeJobTitleInternal(jobTitle),
   ['job-title-analysis'],
   {
-    revalidate: 1,//3600 * 24 * 7, // Cache for 1 week
+    revalidate: 3600 * 24 * 1, // Cache for 1 day
     tags: ['job-title-analysis'],
   }
 );
